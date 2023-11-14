@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:15:49 by truello           #+#    #+#             */
-/*   Updated: 2023/11/13 15:51:04 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/14 15:46:31 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,34 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+typedef struct s_int_array
+{
+	int	*array;
+	int	len;
+}	t_int_array;
+
 /* Stack functions */
 
-t_stack	*newstack(int value);
-t_stack	*second_elem(t_stack *stack);
-t_stack	*last_elem(t_stack *stack);
-t_stack	*pop(t_stack **stack);
-t_stack	*push(t_stack **stack, t_stack *elem);
+t_stack		*newstack(int value);
+t_stack		*second_elem(t_stack *stack);
+t_stack		*last_elem(t_stack *stack);
+t_stack		*pop(t_stack **stack);
+t_stack		*push(t_stack **stack, t_stack *elem);
 
 /* Operations */
 
-void	swap_a(t_stack *stack);
-void	push_a(t_stack **a, t_stack **b);
-void	rotate_a(t_stack **a);
+void		swap_a(t_stack *stack);
+void		push_a(t_stack **a, t_stack **b);
+void		rotate_a(t_stack **a);
 
 /* Util functions */
 
-t_bool	ft_isint(long n);
+t_bool		ft_isint(long n);
+t_int_array	list_atoi(char **nums);
+
+/* Test functions */
+
+void		print_int_array(int *array, int len);
+void		print_stack(t_stack *stack);
 
 #endif

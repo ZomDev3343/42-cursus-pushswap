@@ -1,2 +1,5 @@
-**/.o
-**/.a
+.vscode
+*.o
+*.a
+random.txt
+push_swap

@@ -6,12 +6,13 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:19:30 by truello           #+#    #+#             */
-/*   Updated: 2023/11/13 15:32:31 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/14 14:53:49 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Creates a new stack element */
 t_stack	*newstack(int value)
 {
 	t_stack	*stack;
@@ -22,6 +23,7 @@ t_stack	*newstack(int value)
 	return (stack);
 }
 
+/* Finds the second element of the stack */
 t_stack	*second_elem(t_stack *stack)
 {
 	if (!stack)
@@ -29,6 +31,7 @@ t_stack	*second_elem(t_stack *stack)
 	return (stack->next);
 }
 
+/* Finds the last element of the stack */
 t_stack	*last_elem(t_stack *stack)
 {
 	if (!stack)
@@ -38,6 +41,7 @@ t_stack	*last_elem(t_stack *stack)
 	return (stack);
 }
 
+/* Removes a stack element of his parent stack and returns it */
 t_stack	*pop(t_stack **stack)
 {
 	t_stack	*res;
@@ -48,6 +52,7 @@ t_stack	*pop(t_stack **stack)
 	return (res);
 }
 
+/* Adds an element a the top of the stack */
 t_stack	*push(t_stack **stack, t_stack *elem)
 {
 	elem->next = *stack;

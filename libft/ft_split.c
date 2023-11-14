@@ -6,13 +6,13 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:45:11 by truello           #+#    #+#             */
-/*   Updated: 2023/11/13 12:19:03 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/14 14:13:07 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 
-static char	**free_parts(char **parts)
+char	**free_parts(char **parts)
 {
 	size_t	i;
 
