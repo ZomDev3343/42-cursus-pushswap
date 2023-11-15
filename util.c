@@ -6,17 +6,19 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:11:13 by truello           #+#    #+#             */
-/*   Updated: 2023/11/14 16:27:43 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/15 13:52:12 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Checks if a number can be put in an integer variable */
 t_bool	ft_isint(long n)
 {
 	return (n >= INT32_MIN && n <= INT32_MAX);
 }
 
+/* Tells if an array contains a specific value from index start to stop */
 static t_bool	contains(int *array, int start, int stop, int value)
 {
 	while (--start > stop)
@@ -27,6 +29,9 @@ static t_bool	contains(int *array, int start, int stop, int value)
 	return (FT_FALSE);
 }
 
+/* Creates a struct int array with the int list and its size
+	Making sure that all elements in the list are different
+*/
 t_int_array	list_atoi(char **num_str)
 {
 	size_t		len;

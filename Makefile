@@ -2,7 +2,8 @@ SRC=push_swap.c \
 	stack.c \
 	util.c \
 	functions.c \
-	test_util.c
+	test_util.c \
+	stack2.c
 OBJ=$(SRC:.c=.o)
 HEADERS=push_swap.h
 NAME=push_swap

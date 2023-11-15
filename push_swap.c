@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:15:32 by truello           #+#    #+#             */
-/*   Updated: 2023/11/14 16:28:22 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/15 15:26:14 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,12 @@ static t_bool	sort_stack(t_stack **a, t_stack **b, t_int_array array)
 
 	if (array.array == NULL)
 		return (FT_FALSE);
-	*b = NULL;
 	i = -1;
+	*b = NULL;
 	while (++i < array.len)
 		push(a, newstack(array.array[array.len - i - 1]));
+	print_stack(*a);
+	reverse_rotate(a);
 	print_stack(*a);
 	return (FT_TRUE);
 }
