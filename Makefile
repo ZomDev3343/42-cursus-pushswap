@@ -1,6 +1,8 @@
 SRC=push_swap.c \
 	sort_utils.c \
-	check_params.c
+	check_params.c \
+	stack.c \
+	utils.c
 OBJ=$(SRC:.c=.o)
 HEADERS=push_swap.h
 NAME=push_swap

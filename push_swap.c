@@ -6,25 +6,39 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:05:17 by truello           #+#    #+#             */
-/*   Updated: 2023/11/28 14:46:01 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/29 16:57:44 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	print_error(void)
+{
+	ft_printf("Error\n");
+}
+
 int	main(int ac, char **av)
 {
+	t_stack	*a;
+	t_stack	*b;
+	int		i;
+
+	i = 0;
+	a = NULL;
+	b = NULL;
 	if (ac >= 2)
 	{
-		while (ac >= 2)
+		while (++i < ac)
 		{
-			if (is_int(av[ac - 1]))
+			if (is_int(av[i]))
 			{
-				ft_printf("Int correct : '%s'\n", av[ac - 1]);
-
+				if (!push_int(av[i], &a))
+					return (print_error(), free_stack(a), 0);
 			}
-			ac--;
+			else
+				return (print_error(), free_stack(a), 0);
 		}
+		print_stack(a, "A");
 	}
-	return (0);
+	return (free_stack(a), free_stack(b), 0);
 }
