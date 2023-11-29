@@ -14,6 +14,7 @@ SRC=ft_split.c \
 	ft_split.c \
 	ft_atol.c \
 	ft_error.c \
+	ft_strcmp.c \
 	$(PRINTF)
 OBJ= $(SRC:.c=.o)
 NAME=libft.a

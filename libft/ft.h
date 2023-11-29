@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:02:43 by truello           #+#    #+#             */
-/*   Updated: 2023/11/14 16:16:52 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/28 14:32:53 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	**free_parts(char **parts);
 
 int		ft_isdigit(int c);
 int		ft_isnum(char *str);
+
+int		ft_strcmp(char *s1, char *s2);
 
 int		ft_atoi(const char *str);
 long	ft_atol(const char *str);

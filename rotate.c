@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 14:46:29 by truello           #+#    #+#             */
-/*   Updated: 2023/11/28 15:49:32 by truello          ###   ########.fr       */
+/*   Created: 2023/11/28 14:53:50 by truello           #+#    #+#             */
+/*   Updated: 2023/11/28 15:32:55 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*pop(t_stack **stack)
+void	rotate(t_stack **stack)
 {
-	t_stack	*res;
+	t_stack	*first;
 
-	res = *stack;
-	*stack = (*stack)->next;
-	res->next = NULL;
-	return (res);
-}
-
-void	push(t_stack **stack, t_stack *elem)
-{
-	if (elem == NULL)
+	if (!*stack || !(*stack)->next)
 		return ;
-	elem->next = *stack;
-	*stack = elem;
+	first = *stack;
 }

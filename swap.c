@@ -1,46 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions.c                                        :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 17:27:54 by truello           #+#    #+#             */
-/*   Updated: 2023/11/13 14:21:18 by truello          ###   ########.fr       */
+/*   Created: 2023/11/28 14:47:43 by truello           #+#    #+#             */
+/*   Updated: 2023/11/28 14:53:36 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_a(t_stack *stack)
+void	sa(t_stack **a)
 {
-	int	tmp;
-
-	if (stack && stack->next)
-	{
-		tmp = stack->value;
-		stack->value = stack->next->value;
-		stack->next->value = tmp;
-	}
+	swap(a);
+	ft_printf("sa\n");
 }
 
-void	push_a(t_stack **a, t_stack **b)
+void	sb(t_stack **b)
 {
-	if (!b || !*b)
-		return ;
-	push(a, pop(b));
+	swap(b);
+	ft_printf("sb\n");
 }
 
-void	rotate_a(t_stack **a)
+void	ss(t_stack **a, t_stack **b)
+{
+	swap(a);
+	swap(b);
+	ft_printf("ss\n");
+}
+
+void	swap(t_stack **stack)
 {
 	t_stack	*first;
-	t_stack	*tmp;
+	int		tmp;
 
-	if (!a || !*a)
+	first = *stack;
+	if (!first || !first->next)
 		return ;
-	first = pop(a);
-	tmp = *a;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = first;
+	tmp = first->value;
+	first->value = first->next->value;
+	first->next->value = tmp;
 }

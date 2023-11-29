@@ -1,24 +1,21 @@
 SRC=push_swap.c \
-	stack.c \
-	util.c \
-	functions.c \
-	test_util.c \
-	stack2.c
+	sort_utils.c \
+	check_params.c
 OBJ=$(SRC:.c=.o)
 HEADERS=push_swap.h
 NAME=push_swap
 FT=libft/libft.a
 
-all: $(FT) $(NAME)
+all: $(NAME)
 
 %.o: %.c
 	cc -c -Wall -Werror -Wextra $< -o $@
 
-$(NAME): $(OBJ)
+$(NAME): $(FT) $(OBJ)
 	cc -Wall -Werror -Wextra $(FT) $(OBJ) -o $(NAME)
 
 $(FT):
-	cd libft && make
+	make -C libft
 
 clean:
 	rm -rf *.o
@@ -30,4 +27,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY: all clean fclean re libft/libft.a
+.PHONY: all clean fclean re

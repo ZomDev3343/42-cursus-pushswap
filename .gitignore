@@ -3,3 +3,5 @@
 *.a
 random.txt
 push_swap
+*.py
+tests.c

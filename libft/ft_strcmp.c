@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_util.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 13:44:02 by truello           #+#    #+#             */
-/*   Updated: 2023/11/14 16:30:50 by truello          ###   ########.fr       */
+/*   Created: 2023/11/28 14:16:01 by truello           #+#    #+#             */
+/*   Updated: 2023/11/28 14:29:29 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft.h"
 
-/* Util function to print the content of an integer list */
-void	print_int_array(int *array, int len)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (i < len)
+	while (s1[i] || s2[i])
 	{
-		ft_printf("Num [%d] : %d\n", i, array[i]);
+		if (s1[i] != s2[i])
+			return (FALSE);
 		i++;
 	}
-}
-
-/* Util function to print the content of a stack */
-void	print_stack(t_stack *stack)
-{
-	ft_printf("Stack printing : \n");
-	while (stack)
-	{
-		ft_printf("%d\n", stack->value);
-		stack = stack->next;
-	}
-	ft_printf("End of stack printing : \n");
+	return (TRUE);
 }

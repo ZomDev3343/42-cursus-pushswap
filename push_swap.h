@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 13:15:49 by truello           #+#    #+#             */
-/*   Updated: 2023/11/15 15:41:35 by truello          ###   ########.fr       */
+/*   Created: 2023/11/28 12:05:15 by truello           #+#    #+#             */
+/*   Updated: 2023/11/28 15:50:46 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,43 +17,25 @@
 # include <stdlib.h>
 # include "libft/ft.h"
 
+# define SORT_ASCEND 0
+# define SORT_DESCEND 1
+
 typedef struct s_stack
 {
 	int				value;
 	struct s_stack	*next;
 }	t_stack;
+/* Check Params */
 
-typedef struct s_int_array
-{
-	int	*array;
-	int	len;
-}	t_int_array;
+int		is_int(char *str);
 
-/* Stack functions */
+/* Sort Utils */
 
-t_stack		*newstack(int value);
-t_stack		*second_elem(t_stack *stack);
-t_stack		*last_elem(t_stack *stack);
-t_stack		*prev_elem(t_stack *stack, t_stack *elem);
-t_stack		*pop(t_stack **stack);
-t_stack		*push(t_stack **stack, t_stack *elem);
-t_stack		*rotate(t_stack **stack);
-t_stack		*reverse_rotate(t_stack **stack);
+int		is_sorted(t_stack *stack, int order);
 
-/* Operations */
+/* Stack */
 
-void		swap_a(t_stack *stack);
-void		push_a(t_stack **a, t_stack **b);
-void		rotate_a(t_stack **a);
-
-/* Util functions */
-
-t_bool		ft_isint(long n);
-t_int_array	list_atoi(char **nums);
-
-/* Test functions */
-
-void		print_int_array(int *array, int len);
-void		print_stack(t_stack *stack);
+t_stack	*pop(t_stack **stack);
+void	push(t_stack **stack, t_stack *elem);
 
 #endif
