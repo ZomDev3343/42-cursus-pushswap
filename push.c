@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 13:17:24 by truello           #+#    #+#             */
-/*   Updated: 2023/11/29 18:15:48 by truello          ###   ########.fr       */
+/*   Created: 2023/11/29 17:13:22 by truello           #+#    #+#             */
+/*   Updated: 2023/11/29 17:14:30 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* For order, must be using SORT_ASCEND OR SORT_DESCEND */
-int	is_sorted(t_stack *stack, int order)
+void	pa(t_stack **a, t_stack **b)
 {
-	t_stack	*last;
+	ft_printf("pa\n");
+	push(a, pop(b));
+}
 
-	last = stack;
-	if (!last)
-		return (TRUE);
-	stack = stack->next;
-	while (stack)
-	{
-		if ((stack->value < last->value && order == SORT_ASCEND)
-			|| (stack->value > last->value && order == SORT_DESCEND))
-			return (FALSE);
-	}
-	return (TRUE);
+void	pb(t_stack **a, t_stack **b)
+{
+	ft_printf("pb\n");
+	push(b, pop(a));
 }

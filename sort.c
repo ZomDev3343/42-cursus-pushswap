@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 13:17:24 by truello           #+#    #+#             */
-/*   Updated: 2023/11/29 18:15:48 by truello          ###   ########.fr       */
+/*   Created: 2023/11/29 18:17:44 by truello           #+#    #+#             */
+/*   Updated: 2023/11/29 18:18:54 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* For order, must be using SORT_ASCEND OR SORT_DESCEND */
-int	is_sorted(t_stack *stack, int order)
+void	quicksort_a(t_stack **a, t_stack **b, size_t len)
 {
-	t_stack	*last;
 
-	last = stack;
-	if (!last)
-		return (TRUE);
-	stack = stack->next;
-	while (stack)
-	{
-		if ((stack->value < last->value && order == SORT_ASCEND)
-			|| (stack->value > last->value && order == SORT_DESCEND))
-			return (FALSE);
-	}
-	return (TRUE);
+}
+
+void	quicksort_b(t_stack **a, t_stack **b, size_t len)
+{
+
 }

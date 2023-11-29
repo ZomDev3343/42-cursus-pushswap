@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:47:43 by truello           #+#    #+#             */
-/*   Updated: 2023/11/28 14:53:36 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/29 17:04:47 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	swap(t_stack **stack)
+{
+	t_stack	*first;
+	int		tmp;
+
+	first = *stack;
+	if (!first || !first->next)
+		return ;
+	tmp = first->value;
+	first->value = first->next->value;
+	first->next->value = tmp;
+}
 
 void	sa(t_stack **a)
 {
@@ -31,15 +44,3 @@ void	ss(t_stack **a, t_stack **b)
 	ft_printf("ss\n");
 }
 
-void	swap(t_stack **stack)
-{
-	t_stack	*first;
-	int		tmp;
-
-	first = *stack;
-	if (!first || !first->next)
-		return ;
-	tmp = first->value;
-	first->value = first->next->value;
-	first->next->value = tmp;
-}

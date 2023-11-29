@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:05:17 by truello           #+#    #+#             */
-/*   Updated: 2023/11/29 16:57:44 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/29 18:19:40 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	main(int ac, char **av)
 			else
 				return (print_error(), free_stack(a), 0);
 		}
+		if (!is_sorted(a, SORT_ASCEND))
+			quicksort_a(&a, &b, stack_len(a));
 		print_stack(a, "A");
 	}
 	return (free_stack(a), free_stack(b), 0);

@@ -1,7 +1,13 @@
 SRC=push_swap.c \
 	sort_utils.c \
+	sort.c \
 	check_params.c \
+	swap.c \
+	rotate.c \
+	reverse_rotate.c \
+	push.c \
 	stack.c \
+	stack2.c \
 	utils.c
 OBJ=$(SRC:.c=.o)
 HEADERS=push_swap.h
@@ -21,12 +27,12 @@ $(FT):
 
 clean:
 	rm -rf *.o
-	rm -rf */*.o
+	make clean -C libft
 
 fclean: clean
 	rm -rf $(NAME)
-	rm -rf $(FT)
+	make fclean -C libft
 
 re: clean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libft/libft.a

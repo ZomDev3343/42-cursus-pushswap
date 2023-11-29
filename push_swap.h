@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:05:15 by truello           #+#    #+#             */
-/*   Updated: 2023/11/29 16:51:04 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/29 18:19:24 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_stack
 	int				value;
 	struct s_stack	*next;
 }	t_stack;
+
 /* Check Params */
 
 int		is_int(char *str);
@@ -39,6 +40,37 @@ t_stack	*pop(t_stack **stack);
 void	push(t_stack **stack, t_stack *elem);
 t_stack	*last_elem(t_stack **stack);
 void	push_back(t_stack **stack, t_stack *elem);
+
+/* Stack 2 */
+
+size_t	stack_len(t_stack *stack);
+
+/* Rotate */
+
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+
+/* Swap */
+
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+
+/* Reverse Rotate */
+
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+
+/* Push */
+
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+
+/* Sort */
+void	quicksort_a(t_stack **a, t_stack **b, size_t len);
+void	quicksort_b(t_stack **a, t_stack **b, size_t len);
 
 /* Utils */
 void	print_stack(t_stack *stack, const char *stack_name);
