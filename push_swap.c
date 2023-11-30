@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:05:17 by truello           #+#    #+#             */
-/*   Updated: 2023/11/30 16:22:15 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/30 17:28:56 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int ac, char **av)
 	{
 		while (++i < ac)
 		{
-			if (is_int(av[i]))
+			if (av[i][0] != '\0' && is_int(av[i]))
 			{
 				if (!push_int(av[i], &a))
 					return (print_error(), free_stack(a), 0);
@@ -40,8 +40,6 @@ int	main(int ac, char **av)
 		}
 		if (!is_sorted(a, SORT_ASCEND, stack_len(a)))
 			quicksort_a(&a, &b, stack_len(a), 0);
-		/*print_stack(a, "A");
-		print_stack(b, "B");*/
 	}
 	return (free_stack(a), free_stack(b), 0);
 }

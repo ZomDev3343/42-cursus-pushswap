@@ -5,3 +5,4 @@ random.txt
 push_swap
 *.py
 tests.c
+.DS_Store
