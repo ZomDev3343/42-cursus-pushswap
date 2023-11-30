@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:30:38 by truello           #+#    #+#             */
-/*   Updated: 2023/11/29 16:54:26 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/30 16:00:03 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,17 @@ void	print_stack(t_stack *stack, const char *stack_name)
 		stack = stack->next;
 	}
 	ft_printf("End of printing\n");
+}
+
+void	print_int_array(int *array, int len)
+{
+	int	i;
+
+	i = -1;
+	ft_printf("Array printing : \n");
+	while (++i < len)
+		ft_printf("Array [%d] : %d\n", i, array[i]);
+	ft_printf("End of array printing\n");
 }
 
 void	free_stack(t_stack *stack)

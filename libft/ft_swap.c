@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 17:13:22 by truello           #+#    #+#             */
-/*   Updated: 2023/11/30 16:48:33 by truello          ###   ########.fr       */
+/*   Created: 2023/11/30 11:56:39 by truello           #+#    #+#             */
+/*   Updated: 2023/11/30 11:59:49 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft.h"
 
-void	pa(t_stack **a, t_stack **b)
+void	ft_swap_int(int *a, int *b)
 {
-	ft_printf("pa\n");
-	push(a, pop(b));
-}
+	int	tmp;
 
-void	pb(t_stack **a, t_stack **b)
-{
-	ft_printf("pb\n");
-	push(b, pop(a));
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }

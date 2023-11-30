@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:05:15 by truello           #+#    #+#             */
-/*   Updated: 2023/11/29 18:19:24 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/30 17:17:38 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int		push_int(char *str, t_stack **stack);
 
 /* Sort Utils */
 
-int		is_sorted(t_stack *stack, int order);
+int		is_sorted(t_stack *stack, int order, size_t len);
+int		get_median(t_stack *stack, int len);
 
 /* Stack */
 
@@ -69,12 +70,24 @@ void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
 
 /* Sort */
-void	quicksort_a(t_stack **a, t_stack **b, size_t len);
-void	quicksort_b(t_stack **a, t_stack **b, size_t len);
+void	quicksort_a(t_stack **a, t_stack **b, size_t len, size_t under);
+void	quicksort_b(t_stack **a, t_stack **b, size_t len, size_t under);
 
 /* Utils */
 void	print_stack(t_stack *stack, const char *stack_name);
+void	print_int_array(int *array, int len);
 void	free_stack(t_stack *stack);
 int		contains(t_stack *stack, int value);
 
 #endif
+
+/**
+ * 546
+ * 5674586
+ * 42
+ * 6475635
+ * 64636
+ * 646
+ * 3455
+ * 543
+ */

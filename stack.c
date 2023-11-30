@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:46:29 by truello           #+#    #+#             */
-/*   Updated: 2023/11/29 16:27:43 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/30 17:22:20 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ t_stack	*pop(t_stack **stack)
 {
 	t_stack	*res;
 
+	if (!stack)
+		return (NULL);
 	res = *stack;
 	*stack = (*stack)->next;
 	res->next = NULL;

@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:02:43 by truello           #+#    #+#             */
-/*   Updated: 2023/11/28 14:32:53 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/30 11:57:44 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ int		ft_atoi(const char *str);
 long	ft_atol(const char *str);
 
 void	ft_error(const char *str);
+
+void	ft_swap_int(int *a, int *b);
 
 #endif

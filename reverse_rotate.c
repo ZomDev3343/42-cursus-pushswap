@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:06:29 by truello           #+#    #+#             */
-/*   Updated: 2023/11/29 17:11:36 by truello          ###   ########.fr       */
+/*   Updated: 2023/11/30 16:21:34 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	reverse_rotate(t_stack **stack)
 	if (!*stack || !(*stack)->next)
 		return ;
 	tmp = *stack;
-	while (tmp->next->next)
+	while (tmp->next != last_elem(stack))
 		tmp = tmp->next;
 	last = tmp->next;
 	tmp->next = NULL;
