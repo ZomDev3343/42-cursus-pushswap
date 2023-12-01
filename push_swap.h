@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:05:15 by truello           #+#    #+#             */
-/*   Updated: 2023/11/30 17:29:49 by truello          ###   ########.fr       */
+/*   Updated: 2023/12/01 16:24:00 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		push_int(char *str, t_stack **stack);
 /* Sort Utils */
 
 int		is_sorted(t_stack *stack, int order, size_t len);
-int		get_median(t_stack *stack, int len);
+int		get_median(t_stack *stack, int len, int *buffer);
 
 /* Stack */
 
@@ -72,6 +72,10 @@ void	pb(t_stack **a, t_stack **b);
 /* Sort */
 void	quicksort_a(t_stack **a, t_stack **b, size_t len, size_t under);
 void	quicksort_b(t_stack **a, t_stack **b, size_t len, size_t under);
+
+void	fast_sort_3(t_stack **stack);
+void	smart_sort_3a(t_stack **a, t_stack **b);
+void	smart_sort_3b(t_stack **a, t_stack **b);
 
 /* Utils */
 void	print_stack(t_stack *stack, const char *stack_name);

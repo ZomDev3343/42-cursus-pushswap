@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:17:24 by truello           #+#    #+#             */
-/*   Updated: 2023/11/30 16:04:15 by truello          ###   ########.fr       */
+/*   Updated: 2023/12/01 16:24:08 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	sort_array(int *array, int len)
 	}
 }
 
-int	get_median(t_stack *stack, int len)
+int	get_median(t_stack *stack, int len, int *buffer)
 {
 	int	*array;
 	int	i;
@@ -64,5 +64,5 @@ int	get_median(t_stack *stack, int len)
 		stack = stack->next;
 	}
 	sort_array(array, len);
-	return (i = array[len / 2], free(array), i);
+	return (*buffer = array[len / 2], free(array), 1);
 }

@@ -1,6 +1,7 @@
 SRC=push_swap.c \
 	sort_utils.c \
 	sort.c \
+	sort2.c \
 	check_params.c \
 	swap.c \
 	rotate.c \

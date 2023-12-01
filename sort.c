@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:17:44 by truello           #+#    #+#             */
-/*   Updated: 2023/12/01 12:37:06 by truello          ###   ########.fr       */
+/*   Updated: 2023/12/01 16:25:29 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static void	sort_3a(t_stack **a, int len)
 		if (!is_sorted(*a, SORT_ASCEND, len))
 			sa(a);
 	}
+	else if (len == 3 && stack_len(*a) == 3)
+		fast_sort_3(a);
 	else if (len == 3)
 	{
 		if ((*a)->value > (*a)->next->value)
@@ -48,24 +50,7 @@ static void	sort_3b(t_stack **a, t_stack **b, int len)
 		return (pa(a, b), pa(a, b));
 	}
 	else if (len == 3)
-	{
-		if ((*b)->value < (*b)->next->value)
-			sb(b);
-		if ((*b)->value < (*b)->next->next->value)
-		{
-			rb(b);
-			sb(b);
-			rrb(b);
-			sb(b);
-		}
-		if ((*b)->next->value < (*b)->next->next->value)
-		{
-			rb(b);
-			sb(b);
-			rrb(b);
-		}
-		return (pa(a, b), pa(a, b), pa(a, b));
-	}
+		smart_sort_3b(a, b);
 }
 
 static void	push_all_b(t_stack **a, t_stack **b, size_t len)
@@ -83,10 +68,8 @@ void	quicksort_a(t_stack **a, t_stack **b, size_t len, size_t under)
 		sort_3a(a, len);
 	else
 	{
-		if (is_sorted(*a, SORT_ASCEND, len))
-			return ;
-		median = get_median(*a, len);
-		if (median == 0)
+		if (is_sorted(*a, SORT_ASCEND, len)
+			|| get_median(*a, len, &median) == 0)
 			return ;
 		i = len;
 		while (i != len / 2 + len % 2)
@@ -114,8 +97,7 @@ void	quicksort_b(t_stack **a, t_stack **b, size_t len, size_t under)
 	{
 		if (is_sorted(*b, SORT_DESCEND, len))
 			return (push_all_b(a, b, len));
-		median = get_median(*b, len);
-		if (median == 0)
+		if (get_median(*b, len, &median) == 0)
 			return ;
 		i = len;
 		while (i != len / 2)
