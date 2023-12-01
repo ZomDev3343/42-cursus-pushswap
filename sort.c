@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:17:44 by truello           #+#    #+#             */
-/*   Updated: 2023/12/01 16:25:29 by truello          ###   ########.fr       */
+/*   Updated: 2023/12/01 16:49:11 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,28 @@ static void	sort_3a(t_stack **a, int len)
 
 static void	sort_3b(t_stack **a, t_stack **b, int len)
 {
-	if (len <= 2)
+	if (len == 1)
+		pa(a, b);
+	else if (len == 2)
 	{
-		if (!is_sorted(*b, SORT_DESCEND, len))
+		if ((*b)->value < (*b)->next->value)
 			sb(b);
 		return (pa(a, b), pa(a, b));
 	}
 	else if (len == 3)
-		smart_sort_3b(a, b);
+	{
+		while (len || !((*a)->value < (*a)->next->value && (*a)->next->value < (*a)->next->next->value))
+			if (len == 1 && (*a)->value > (*a)->next->value)
+				sa(a);
+			else if (len == 1 || (len >= 2 && (*b)->value > (*b)->next->value)
+					|| (len == 3 && (*b)->value > (*b)->next->next->value))
+			{
+				pa(a, b);
+				len--;
+			}
+			else
+				sb(b);
+	}
 }
 
 static void	push_all_b(t_stack **a, t_stack **b, size_t len)
