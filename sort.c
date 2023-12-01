@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:17:44 by truello           #+#    #+#             */
-/*   Updated: 2023/12/01 16:49:11 by truello          ###   ########.fr       */
+/*   Updated: 2023/12/01 16:51:50 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,20 @@ static void	sort_3b(t_stack **a, t_stack **b, int len)
 	}
 	else if (len == 3)
 	{
-		while (len || !((*a)->value < (*a)->next->value && (*a)->next->value < (*a)->next->next->value))
+		while (len || !((*a)->value < (*a)->next->value
+				&& (*a)->next->value < (*a)->next->next->value))
+		{
 			if (len == 1 && (*a)->value > (*a)->next->value)
 				sa(a);
 			else if (len == 1 || (len >= 2 && (*b)->value > (*b)->next->value)
-					|| (len == 3 && (*b)->value > (*b)->next->next->value))
+				|| (len == 3 && (*b)->value > (*b)->next->next->value))
 			{
 				pa(a, b);
 				len--;
 			}
 			else
 				sb(b);
+		}
 	}
 }
 
