@@ -6,13 +6,13 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:47:43 by truello           #+#    #+#             */
-/*   Updated: 2023/11/30 12:39:09 by truello          ###   ########.fr       */
+/*   Updated: 2024/01/08 15:52:26 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(t_stack **stack)
+void	swap(t_stack **stack)
 {
 	t_stack	*first;
 	int		tmp;

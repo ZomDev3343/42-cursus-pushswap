@@ -6,13 +6,13 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:05:17 by truello           #+#    #+#             */
-/*   Updated: 2023/11/30 17:28:56 by truello          ###   ########.fr       */
+/*   Updated: 2023/12/05 11:52:57 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_error(void)
+static void	print_error(void)
 {
 	ft_printf("Error\n");
 }

@@ -1,10 +1,9 @@
 .vscode
 *.o
 *.a
-random.txt
+*.txt
 push_swap
 *.py
 tests.c
 .DS_Store
 checker_Mac
-random500.txt

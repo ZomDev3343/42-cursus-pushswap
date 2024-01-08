@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 14:16:01 by truello           #+#    #+#             */
-/*   Updated: 2024/01/08 15:05:18 by truello          ###   ########.fr       */
+/*   Created: 2024/01/08 15:48:20 by truello           #+#    #+#             */
+/*   Updated: 2024/01/08 15:56:18 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
+# include "../push_swap.h"
 
-	i = 0;
-	while (s1[i] || s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (FALSE);
-		i++;
-	}
-	return (TRUE);
-}
+void	swap(t_stack **stack);
+void	rotate(t_stack **stack);
+void	reverse_rotate(t_stack **stack);
 
-int	ft_strncmp(char *s1, char *s2, int n)
-{
-	int	i;
-
-	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
-	{
-		if (s1[i] != s2[i])
-			return (FALSE);
-		i++;
-	}
-	return (TRUE);
-}
+#endif

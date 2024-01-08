@@ -6,13 +6,13 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:53:50 by truello           #+#    #+#             */
-/*   Updated: 2023/11/30 16:22:02 by truello          ###   ########.fr       */
+/*   Updated: 2024/01/08 15:52:31 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_stack **stack)
+void	rotate(t_stack **stack)
 {
 	t_stack	*first;
 
