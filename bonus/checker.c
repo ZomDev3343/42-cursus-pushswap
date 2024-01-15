@@ -6,7 +6,7 @@
 /*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:51:40 by truello           #+#    #+#             */
-/*   Updated: 2024/01/08 16:52:48 by truello          ###   ########.fr       */
+/*   Updated: 2024/01/15 14:28:37 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 static void	print_error(void)
 {
 	ft_printf("Error\n");
+}
+
+static int	exec_push(t_stack **a, t_stack **b)
+{
+	if (*a != NULL)
+		push(a, pop(b));
+	return (1);
 }
 
 static int	exec_instruction(t_stack **a, t_stack **b, char *instr)
@@ -27,22 +34,18 @@ static int	exec_instruction(t_stack **a, t_stack **b, char *instr)
 		return (rotate(a), 1);
 	else if (ft_strcmp(instr, "rb\n"))
 		return (rotate(b), 1);
+	else if (ft_strcmp(instr, "rr\n"))
+		return (rotate(a), rotate(b), 1);
 	else if (ft_strcmp(instr, "rra\n"))
 		return (reverse_rotate(a), 1);
 	else if (ft_strcmp(instr, "rrb\n"))
 		return (reverse_rotate(b), 1);
+	else if (ft_strcmp(instr, "rrr\n"))
+		return (reverse_rotate(a), reverse_rotate(b), 1);
 	else if (ft_strcmp(instr, "pa\n"))
-	{
-		if (*b != NULL)
-			push(a, pop(b));
-		return (1);
-	}
+		return (exec_push(a, b));
 	else if (ft_strcmp(instr, "pb\n"))
-	{
-		if (*a != NULL)
-			push(b, pop(a));
-		return (1);
-	}
+		return (exec_push(b, a));
 	return (0);
 }
 
