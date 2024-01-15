@@ -38,7 +38,9 @@ $(NAME): $(FT) $(OBJ)
 $(FT):
 	make -C libft
 
-bonus: $(CHECKER_OBJ) $(FT)
+bonus: $(CHECKER_OBJ) $(CHECKER)
+
+$(CHECKER): $(CHECKER_OBJ) $(FT)
 	cc -Wall -Werror -Wextra $(FT) $(CHECKER_OBJ) -o checker
 
 clean:

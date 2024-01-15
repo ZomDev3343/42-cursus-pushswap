@@ -3,6 +3,7 @@
 *.a
 *.txt
 push_swap
+bonus
 *.py
 tests.c
 .DS_Store
