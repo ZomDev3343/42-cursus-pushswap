@@ -19,7 +19,7 @@ static void	print_error(void)
 
 static int	exec_push(t_stack **a, t_stack **b)
 {
-	if (*a != NULL)
+	if (*b != NULL)
 		push(a, pop(b));
 	return (1);
 }

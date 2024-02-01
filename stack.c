@@ -26,7 +26,7 @@ t_stack	*pop(t_stack **stack)
 {
 	t_stack	*res;
 
-	if (!stack)
+	if (!stack || !*stack)
 		return (NULL);
 	res = *stack;
 	*stack = (*stack)->next;

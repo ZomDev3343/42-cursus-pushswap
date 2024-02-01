@@ -30,10 +30,10 @@ FT=libft/libft.a
 all: $(NAME)
 
 %.o: %.c
-	cc -c -Wall -Werror -Wextra $< -o $@
+	cc -c -Wall -Werror -Wextra -g $< -o $@
 
 $(NAME): $(FT) $(OBJ)
-	cc -Wall -Werror -Wextra $(FT) $(OBJ) -o $(NAME)
+	cc -Wall -Werror -Wextra $(OBJ) $(FT) -o $(NAME)
 
 $(FT):
 	make -C libft
@@ -41,7 +41,7 @@ $(FT):
 bonus: $(CHECKER_OBJ) $(CHECKER)
 
 $(CHECKER): $(CHECKER_OBJ) $(FT)
-	cc -Wall -Werror -Wextra $(FT) $(CHECKER_OBJ) -o checker
+	cc -Wall -Werror -Wextra $(CHECKER_OBJ) $(FT) -o checker
 
 clean:
 	rm -rf *.o

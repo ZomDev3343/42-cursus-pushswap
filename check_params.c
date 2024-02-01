@@ -24,7 +24,7 @@ int	is_int(char *str)
 	while (parts[++i])
 	{
 		n = ft_atol(parts[i]);
-		if (ft_strlen(parts[i]) > 11 || (n > INT32_MAX || n < INT32_MIN)
+		if (ft_strlen(parts[i]) > 11 || (n > __INT32_MAX__ || n < (-__INT32_MAX__) - 1)
 			|| (n == 0 && !ft_strcmp(parts[i], "0")))
 			return (free_parts(parts), FALSE);
 	}
