@@ -20,7 +20,7 @@ void	print_stack(t_stack *stack, const char *stack_name)
 		ft_printf("Value : %d, Next : %p\n", stack->value, stack->next);
 		stack = stack->next;
 	}
-	ft_printf("End of printing\n");
+	ft_printf("End of print\n");
 }
 
 void	print_int_array(int *array, int len)
